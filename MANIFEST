@@ -1,0 +1,6 @@
+Changes
+Makefile.PL
+MANIFEST
+README
+t/Template-Plugin-MARC.t
+lib/Template/Plugin/MARC.pm
