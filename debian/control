@@ -1,0 +1,18 @@
+Source: libtemplate-plugin-marc-perl
+Section: perl
+Priority: optional
+Maintainer: Jared Camins-Esakov <jcamins@cpbibliography.com>
+Build-Depends: debhelper (>= 8),
+ libmarc-record-perl,
+ libtemplate-perl
+Build-Depends-Indep: perl
+Standards-Version: 3.9.2
+Homepage: http://search.cpan.org/dist/Template-Plugin-MARC/
+
+Package: libtemplate-plugin-marc-perl
+Architecture: all
+Depends: ${misc:Depends}, ${perl:Depends}
+Description: Template::Toolkit plugin to make MARC friendly
+ A Template::Toolkit plugin which given a MARC::Record object parses it into a
+ hash that can be accessed directly in Template::Toolkit.
+ .
