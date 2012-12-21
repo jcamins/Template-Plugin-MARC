@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 8),
  libmarc-record-perl,
  libtemplate-perl
 Build-Depends-Indep: perl
-Standards-Version: 3.9.2
+Standards-Version: 3.9.3
 Homepage: http://search.cpan.org/dist/Template-Plugin-MARC/
 
 Package: libtemplate-plugin-marc-perl

@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# This script will take care of all the necessary steps for generating Debian packages
+
+rm -f Template-Plugin-MARC-*.tar.gz
+make clean && rm -f Makefile.old
+perl Makefile.PL
+make dist
+VERSION=`perl -MExtUtils::MakeMaker -le 'print MM->parse_version(shift)' lib/Template/Plugin/MARC.pm`
+mv "Template-Plugin-MARC-${VERSION}.tar.gz" "../libtemplate-plugin-marc-perl_${VERSION}.orig.tar.gz"
+make clean && rm -f Makefile.old
+debuild
+rm -R debian/libtemplate-plugin-marc-perl*
+make clean && rm -f Makefile.old
