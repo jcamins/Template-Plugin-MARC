@@ -1,5 +1,7 @@
 Changes
 lib/Template/Plugin/MARC.pm
+lib/Template/Plugin/MARC/Field.pm
+lib/Template/Plugin/MARC/Subfield.pm
 Makefile.PL
 MANIFEST
 META.json
