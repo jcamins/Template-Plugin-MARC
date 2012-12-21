@@ -2,5 +2,7 @@ Changes
 lib/Template/Plugin/MARC.pm
 Makefile.PL
 MANIFEST
+META.json
+META.yml
 README
 t/Template-Plugin-MARC.t

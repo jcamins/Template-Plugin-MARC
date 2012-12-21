@@ -4,7 +4,9 @@ use ExtUtils::MakeMaker;
 # the contents of the Makefile that is written.
 WriteMakefile(
     NAME              => 'Template::Plugin::MARC',
+    LICENSE           => 'gpl_3',
     VERSION_FROM      => 'lib/Template/Plugin/MARC.pm', # finds $VERSION
+    NO_META           => 1,
     PREREQ_PM         =>  { 'MARC::Record' => 2,
                             'Template' => 2.22 }, # e.g., Module::Name => 1.1
     ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
