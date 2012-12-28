@@ -13,7 +13,7 @@ use MARC::Field;
 
 use Template::Plugin::MARC::Subfield;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 our $AUTOLOAD;
 
