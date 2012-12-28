@@ -10,35 +10,35 @@ Template::Plugin::MARC - Template::Toolkit plugin to make MARC friendly
 
 =head1 SYNOPSIS
 
-[% USE record = MARC(mymarc) %] <!-- translate MARC::Record to T::T hash -->
-<h1>[% record.f245.sa %]</h1> <!-- subfield 245$a -->
-[% record.f245.all %] <!-- all subfields concatenated together -->
-[% FOREACH link IN record.f856s %] <!-- process each 856 field -->
-    <a href="whatever/[% link.su %]">[% link.sy %]</a> <!-- create a link on 856$y -->
-[% END %] <!-- /FOREACH link IN record.856s -->
-[% FOREACH contents IN record.f505s %] <!-- process each 505 field -->
-    [% FOREACH subf IN contents.subfields %] <!-- process each subfield -->
-        [% SWITCH subf.code %]
-        [% CASE 'a' %]
-            <span class='contents'>[% subf.value %]</span>
-        [% CASE 't' %]
-            <span class='title'>[% subf.value %]</span>
-        [% CASE 'r' %]
-            <span class='responsibility'>[% subf.value %]</span>
-        [% END %]
-    [% END %] <!-- /FOREACH contents.subfields -->
-[% END %] <!-- /FOREACH contents IN record.f505s -->
-[% FOREACH subj IN record.f6xxs %]
-    <a href="whatever/[% subj.s9 %]">[% subj.sa %]</a> <!-- create a link on 6[0-9]{2}$a -->
-[% END %]
-[% FOREACH field IN record.fields %]
-    [% SWITCH field.tag %]
-    [% CASE '600' %]
-        Subject: [% field.all %] is what we are all about
-    [% CASE '700' %]
-        Co-author: [% field.all %], I presume?
+    [% USE record = MARC(mymarc) %] <!-- translate MARC::Record to T::T hash -->
+    <h1>[% record.f245.sa %]</h1> <!-- subfield 245$a -->
+    [% record.f245.all %] <!-- all subfields concatenated together -->
+    [% FOREACH link IN record.f856s %] <!-- process each 856 field -->
+       <a href="whatever/[% link.su %]">[% link.sy %]</a> <!-- create a link on 856$y -->
+    [% END %] <!-- /FOREACH link IN record.856s -->
+    [% FOREACH contents IN record.f505s %] <!-- process each 505 field -->
+       [% FOREACH subf IN contents.subfields %] <!-- process each subfield -->
+           [% SWITCH subf.code %]
+           [% CASE 'a' %]
+               <span class='contents'>[% subf.value %]</span>
+           [% CASE 't' %]
+               <span class='title'>[% subf.value %]</span>
+           [% CASE 'r' %]
+               <span class='responsibility'>[% subf.value %]</span>
+           [% END %]
+       [% END %] <!-- /FOREACH contents.subfields -->
+    [% END %] <!-- /FOREACH contents IN record.f505s -->
+    [% FOREACH subj IN record.f6xxs %]
+       <a href="whatever/[% subj.s9 %]">[% subj.sa %]</a> <!-- create a link on 6[0-9]{2}$a -->
     [% END %]
-[% END %]
+    [% FOREACH field IN record.fields %]
+       [% SWITCH field.tag %]
+       [% CASE '600' %]
+           Subject: [% field.all %] is what we are all about
+       [% CASE '700' %]
+           Co-author: [% field.all %], I presume?
+       [% END %]
+    [% END %]
 
 =head1 DESCRIPTION
 
