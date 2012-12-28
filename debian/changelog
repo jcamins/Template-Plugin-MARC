@@ -1,3 +1,9 @@
+libtemplate-plugin-marc-perl (0.02-1) precise; urgency=low
+
+  * Upstream release 0.02.
+
+ -- Jared Camins-Esakov <jcamins@cpbibliography.com>  Thu, 27 Dec 2012 20:39:33 -0500
+
 libtemplate-plugin-marc-perl (0.01-1) unstable; urgency=low
 
   * Initial Release.
