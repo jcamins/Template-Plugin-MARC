@@ -1,5 +1,8 @@
 Revision history for Perl extension Template::Plugin::MARC.
 
+0.04  Fri Feb 8 17:09:00 2013
+	- Fix installation.
+
 0.03  Fri Feb 8 15:23:00 2013
 	- Add a script for processing MARC files through T::T
 

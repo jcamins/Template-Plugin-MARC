@@ -11,7 +11,7 @@ use 5.010000;
 use strict;
 use warnings;
 
-our $VERSION = '0.02';
+our $VERSION = '0.04';
 
 sub new {
     my ($class, $code, $value) = @_;
