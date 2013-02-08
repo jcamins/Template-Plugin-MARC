@@ -1,3 +1,4 @@
+bin/batch-marc-tt
 Changes
 lib/Template/Plugin/MARC.pm
 lib/Template/Plugin/MARC/Field.pm
