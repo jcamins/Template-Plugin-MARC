@@ -140,7 +140,7 @@ use Template::Plugin;
 use base qw( Template::Plugin );
 use Template::Plugin::MARC::Field;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 our $AUTOLOAD;
 

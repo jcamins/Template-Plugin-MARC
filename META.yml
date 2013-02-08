@@ -20,4 +20,4 @@ no_index:
 requires:
   MARC::Record: 2
   Template: 2.22
-version: 0.02
+version: 0.03
