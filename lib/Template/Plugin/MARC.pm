@@ -205,16 +205,18 @@ sub init {
 
     my $recordhash = { fields => [] };
 
-    foreach my $field ($self->{'marc'}->fields()) {
-        my $fieldobj = Template::Plugin::MARC::Field->new($field);
-        my $tag = $fieldobj->tag();
-        my $section = 'f' . substr($tag, 0, 1) . 'xxs';
-        $recordhash->{"f$tag"} = $fieldobj unless $recordhash->{"f$tag"};
-        $recordhash->{"f$tag" . 's'} = [] unless $recordhash->{"f$tag" . 's'};
-        push @{$recordhash->{"f$tag" . 's'}}, $fieldobj;
-        $recordhash->{"$section"} = [] unless $recordhash->{"$section"};
-        push @{$recordhash->{"$section"}}, $fieldobj;
-        push @{$recordhash->{'fields'}}, $fieldobj;
+    if ( ref $self->{'marc'} eq 'MARC::Record' ) {
+        foreach my $field ($self->{'marc'}->fields()) {
+            my $fieldobj = Template::Plugin::MARC::Field->new($field);
+            my $tag = $fieldobj->tag();
+            my $section = 'f' . substr($tag, 0, 1) . 'xxs';
+            $recordhash->{"f$tag"} = $fieldobj unless $recordhash->{"f$tag"};
+            $recordhash->{"f$tag" . 's'} = [] unless $recordhash->{"f$tag" . 's'};
+            push @{$recordhash->{"f$tag" . 's'}}, $fieldobj;
+            $recordhash->{"$section"} = [] unless $recordhash->{"$section"};
+            push @{$recordhash->{"$section"}}, $fieldobj;
+            push @{$recordhash->{'fields'}}, $fieldobj;
+        }
     }
 
     $self->{'record'} = $recordhash;
